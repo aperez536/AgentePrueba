@@ -1,0 +1,6 @@
+node_modules/
+dist/
+coverage/
+autofix-report.md
+*.log
+.DS_Store

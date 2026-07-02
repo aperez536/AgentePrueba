@@ -1,0 +1,413 @@
+{
+  "_meta": {
+    "description": "Catálogo de compatibilidad de APIs SAPUI5 por versión. Usado por check-ui5-compat.js.",
+    "lastValidated": "2024-12-01",
+    "validatedBy": "Agente SAPUI5 Offline-First",
+    "source": "https://openui5.org/releases/",
+    "note": "Si la fecha 'lastValidated' supera 90 días, el agente emitirá advertencia de incertidumbre."
+  },
+  "versions": {
+    "1.71": {
+      "minVersion": "1.71.0",
+      "maxVersion": "1.71.99",
+      "releaseDate": "2019-11-07",
+      "ltsUntil": "2021-11-07",
+      "allowed": [
+        "sap.m.Button",
+        "sap.m.Input",
+        "sap.m.List",
+        "sap.m.StandardListItem",
+        "sap.m.Dialog",
+        "sap.m.MessageToast",
+        "sap.m.Page",
+        "sap.m.Shell",
+        "sap.m.App",
+        "sap.m.NavContainer",
+        "sap.m.Table",
+        "sap.m.Column",
+        "sap.m.ColumnListItem",
+        "sap.m.Label",
+        "sap.m.Text",
+        "sap.m.Title",
+        "sap.m.Toolbar",
+        "sap.m.SearchField",
+        "sap.m.Select",
+        "sap.m.ComboBox",
+        "sap.m.DatePicker",
+        "sap.m.Panel",
+        "sap.m.VBox",
+        "sap.m.HBox",
+        "sap.m.FlexBox",
+        "sap.m.ObjectHeader",
+        "sap.m.ObjectAttribute",
+        "sap.m.ObjectStatus",
+        "sap.ui.core.mvc.XMLView",
+        "sap.ui.core.mvc.Controller",
+        "sap.ui.model.json.JSONModel",
+        "sap.ui.model.odata.v2.ODataModel",
+        "sap.ui.model.odata.v4.ODataModel",
+        "sap.ui.core.routing.Router",
+        "sap.ui.core.UIComponent",
+        "sap.f.FlexibleColumnLayout",
+        "sap.f.DynamicPage",
+        "sap.f.DynamicPageTitle",
+        "sap.f.DynamicPageHeader",
+        "sap.uxap.ObjectPageLayout",
+        "sap.uxap.ObjectPageSection",
+        "sap.uxap.ObjectPageSubSection"
+      ],
+      "deprecated": [
+        {
+          "api": "sap.ui.commons.Button",
+          "replacement": "sap.m.Button",
+          "since": "1.38"
+        },
+        {
+          "api": "sap.ui.commons.TextField",
+          "replacement": "sap.m.Input",
+          "since": "1.38"
+        },
+        {
+          "api": "sap.ui.commons.Dialog",
+          "replacement": "sap.m.Dialog",
+          "since": "1.38"
+        },
+        {
+          "api": "sap.ui.table.DataTable",
+          "replacement": "sap.ui.table.Table",
+          "since": "1.38"
+        },
+        {
+          "api": "jQuery.sap.log",
+          "replacement": "sap.base.Log",
+          "since": "1.58"
+        },
+        {
+          "api": "jQuery.sap.require",
+          "replacement": "sap.ui.require",
+          "since": "1.58"
+        },
+        {
+          "api": "jQuery.sap.declare",
+          "replacement": "sap.ui.define",
+          "since": "1.58"
+        }
+      ],
+      "forbidden": [
+        "sap.ui.core.Popup.open",
+        "sap.m.GrowingEnablement"
+      ]
+    },
+    "1.84": {
+      "minVersion": "1.84.0",
+      "maxVersion": "1.84.99",
+      "releaseDate": "2021-01-28",
+      "ltsUntil": "2023-01-28",
+      "allowed": [
+        "sap.m.Button",
+        "sap.m.Input",
+        "sap.m.List",
+        "sap.m.StandardListItem",
+        "sap.m.Dialog",
+        "sap.m.MessageToast",
+        "sap.m.Page",
+        "sap.m.Shell",
+        "sap.m.App",
+        "sap.m.NavContainer",
+        "sap.m.Table",
+        "sap.m.Column",
+        "sap.m.ColumnListItem",
+        "sap.m.Label",
+        "sap.m.Text",
+        "sap.m.Title",
+        "sap.m.Toolbar",
+        "sap.m.SearchField",
+        "sap.m.Select",
+        "sap.m.ComboBox",
+        "sap.m.DatePicker",
+        "sap.m.Panel",
+        "sap.m.VBox",
+        "sap.m.HBox",
+        "sap.m.FlexBox",
+        "sap.m.ObjectHeader",
+        "sap.m.ObjectAttribute",
+        "sap.m.ObjectStatus",
+        "sap.m.IconTabBar",
+        "sap.m.IconTabFilter",
+        "sap.m.OverflowToolbar",
+        "sap.m.OverflowToolbarButton",
+        "sap.ui.core.mvc.XMLView",
+        "sap.ui.core.mvc.Controller",
+        "sap.ui.model.json.JSONModel",
+        "sap.ui.model.odata.v2.ODataModel",
+        "sap.ui.model.odata.v4.ODataModel",
+        "sap.ui.core.routing.Router",
+        "sap.ui.core.UIComponent",
+        "sap.f.FlexibleColumnLayout",
+        "sap.f.DynamicPage",
+        "sap.f.DynamicPageTitle",
+        "sap.f.DynamicPageHeader",
+        "sap.uxap.ObjectPageLayout",
+        "sap.uxap.ObjectPageSection",
+        "sap.uxap.ObjectPageSubSection",
+        "sap.base.Log",
+        "sap.base.i18n.ResourceBundle"
+      ],
+      "deprecated": [
+        {
+          "api": "sap.ui.commons.Button",
+          "replacement": "sap.m.Button",
+          "since": "1.38"
+        },
+        {
+          "api": "sap.ui.commons.TextField",
+          "replacement": "sap.m.Input",
+          "since": "1.38"
+        },
+        {
+          "api": "jQuery.sap.log",
+          "replacement": "sap.base.Log",
+          "since": "1.58"
+        },
+        {
+          "api": "jQuery.sap.require",
+          "replacement": "sap.ui.require",
+          "since": "1.58"
+        },
+        {
+          "api": "jQuery.sap.declare",
+          "replacement": "sap.ui.define",
+          "since": "1.58"
+        },
+        {
+          "api": "sap.ui.getCore",
+          "replacement": "Component.getComponentById o sap.ui.core.Core API",
+          "since": "1.84"
+        },
+        {
+          "api": "sap.m.ObjectHeader",
+          "replacement": "sap.f.DynamicPageTitle o sap.uxap.ObjectPageHeader",
+          "since": "1.84"
+        }
+      ],
+      "forbidden": [
+        "sap.ui.core.Popup.open",
+        "sap.m.GrowingEnablement",
+        "sap.ui.commons.Button",
+        "sap.ui.commons.TextField"
+      ]
+    },
+    "1.96": {
+      "minVersion": "1.96.0",
+      "maxVersion": "1.96.99",
+      "releaseDate": "2021-11-11",
+      "ltsUntil": "2023-11-11",
+      "allowed": [
+        "sap.m.Button",
+        "sap.m.Input",
+        "sap.m.List",
+        "sap.m.StandardListItem",
+        "sap.m.Dialog",
+        "sap.m.MessageToast",
+        "sap.m.Page",
+        "sap.m.Shell",
+        "sap.m.App",
+        "sap.m.NavContainer",
+        "sap.m.Table",
+        "sap.m.Column",
+        "sap.m.ColumnListItem",
+        "sap.m.Label",
+        "sap.m.Text",
+        "sap.m.Title",
+        "sap.m.Toolbar",
+        "sap.m.SearchField",
+        "sap.m.Select",
+        "sap.m.ComboBox",
+        "sap.m.DatePicker",
+        "sap.m.Panel",
+        "sap.m.VBox",
+        "sap.m.HBox",
+        "sap.m.FlexBox",
+        "sap.m.ObjectAttribute",
+        "sap.m.ObjectStatus",
+        "sap.m.IconTabBar",
+        "sap.m.IconTabFilter",
+        "sap.m.OverflowToolbar",
+        "sap.m.OverflowToolbarButton",
+        "sap.m.Avatar",
+        "sap.m.Card",
+        "sap.m.IllustratedMessage",
+        "sap.ui.core.mvc.XMLView",
+        "sap.ui.core.mvc.Controller",
+        "sap.ui.model.json.JSONModel",
+        "sap.ui.model.odata.v2.ODataModel",
+        "sap.ui.model.odata.v4.ODataModel",
+        "sap.ui.core.routing.Router",
+        "sap.ui.core.UIComponent",
+        "sap.f.FlexibleColumnLayout",
+        "sap.f.DynamicPage",
+        "sap.f.DynamicPageTitle",
+        "sap.f.DynamicPageHeader",
+        "sap.f.GridContainer",
+        "sap.uxap.ObjectPageLayout",
+        "sap.uxap.ObjectPageSection",
+        "sap.uxap.ObjectPageSubSection",
+        "sap.base.Log",
+        "sap.base.i18n.ResourceBundle"
+      ],
+      "deprecated": [
+        {
+          "api": "jQuery.sap.log",
+          "replacement": "sap.base.Log",
+          "since": "1.58"
+        },
+        {
+          "api": "jQuery.sap.require",
+          "replacement": "sap.ui.require",
+          "since": "1.58"
+        },
+        {
+          "api": "jQuery.sap.declare",
+          "replacement": "sap.ui.define",
+          "since": "1.58"
+        },
+        {
+          "api": "sap.ui.getCore",
+          "replacement": "Component.getComponentById o sap.ui.core.Core API",
+          "since": "1.84"
+        },
+        {
+          "api": "sap.m.ObjectHeader",
+          "replacement": "sap.f.DynamicPageTitle o sap.uxap.ObjectPageHeader",
+          "since": "1.84"
+        },
+        {
+          "api": "sap.ui.core.format.FileSizeFormat",
+          "replacement": "sap.ui.core.format.NumberFormat",
+          "since": "1.96"
+        }
+      ],
+      "forbidden": [
+        "sap.ui.core.Popup.open",
+        "sap.m.GrowingEnablement",
+        "sap.ui.commons.Button",
+        "sap.ui.commons.TextField",
+        "sap.ui.commons.Dialog"
+      ]
+    },
+    "1.108": {
+      "minVersion": "1.108.0",
+      "maxVersion": "1.108.99",
+      "releaseDate": "2022-12-08",
+      "ltsUntil": "2024-12-08",
+      "allowed": [
+        "sap.m.Button",
+        "sap.m.Input",
+        "sap.m.List",
+        "sap.m.StandardListItem",
+        "sap.m.Dialog",
+        "sap.m.MessageToast",
+        "sap.m.Page",
+        "sap.m.Shell",
+        "sap.m.App",
+        "sap.m.NavContainer",
+        "sap.m.Table",
+        "sap.m.Column",
+        "sap.m.ColumnListItem",
+        "sap.m.Label",
+        "sap.m.Text",
+        "sap.m.Title",
+        "sap.m.Toolbar",
+        "sap.m.SearchField",
+        "sap.m.Select",
+        "sap.m.ComboBox",
+        "sap.m.DatePicker",
+        "sap.m.Panel",
+        "sap.m.VBox",
+        "sap.m.HBox",
+        "sap.m.FlexBox",
+        "sap.m.ObjectAttribute",
+        "sap.m.ObjectStatus",
+        "sap.m.IconTabBar",
+        "sap.m.IconTabFilter",
+        "sap.m.OverflowToolbar",
+        "sap.m.OverflowToolbarButton",
+        "sap.m.Avatar",
+        "sap.m.Card",
+        "sap.m.IllustratedMessage",
+        "sap.m.DynamicDateRange",
+        "sap.m.upload.UploadSet",
+        "sap.ui.core.mvc.XMLView",
+        "sap.ui.core.mvc.Controller",
+        "sap.ui.model.json.JSONModel",
+        "sap.ui.model.odata.v2.ODataModel",
+        "sap.ui.model.odata.v4.ODataModel",
+        "sap.ui.core.routing.Router",
+        "sap.ui.core.UIComponent",
+        "sap.f.FlexibleColumnLayout",
+        "sap.f.DynamicPage",
+        "sap.f.DynamicPageTitle",
+        "sap.f.DynamicPageHeader",
+        "sap.f.GridContainer",
+        "sap.f.Card",
+        "sap.uxap.ObjectPageLayout",
+        "sap.uxap.ObjectPageSection",
+        "sap.uxap.ObjectPageSubSection",
+        "sap.base.Log",
+        "sap.base.i18n.ResourceBundle",
+        "sap.ui.integration.widgets.Card"
+      ],
+      "deprecated": [
+        {
+          "api": "jQuery.sap.log",
+          "replacement": "sap.base.Log",
+          "since": "1.58"
+        },
+        {
+          "api": "jQuery.sap.require",
+          "replacement": "sap.ui.require",
+          "since": "1.58"
+        },
+        {
+          "api": "jQuery.sap.declare",
+          "replacement": "sap.ui.define",
+          "since": "1.58"
+        },
+        {
+          "api": "sap.ui.getCore",
+          "replacement": "Component.getComponentById o sap.ui.core.Core API",
+          "since": "1.84"
+        },
+        {
+          "api": "sap.m.ObjectHeader",
+          "replacement": "sap.f.DynamicPageTitle o sap.uxap.ObjectPageHeader",
+          "since": "1.84"
+        },
+        {
+          "api": "sap.ui.core.format.FileSizeFormat",
+          "replacement": "sap.ui.core.format.NumberFormat",
+          "since": "1.96"
+        },
+        {
+          "api": "sap.m.UploadCollection",
+          "replacement": "sap.m.upload.UploadSet",
+          "since": "1.108"
+        },
+        {
+          "api": "sap.suite.ui.commons.TimelineItem",
+          "replacement": "sap.m.NotificationListItem",
+          "since": "1.108"
+        }
+      ],
+      "forbidden": [
+        "sap.ui.core.Popup.open",
+        "sap.m.GrowingEnablement",
+        "sap.ui.commons.Button",
+        "sap.ui.commons.TextField",
+        "sap.ui.commons.Dialog",
+        "sap.ui.table.DataTable",
+        "sap.m.UploadCollection"
+      ]
+    }
+  }
+}

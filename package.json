@@ -1,0 +1,28 @@
+{
+  "name": "agente-sapui5-offline-first",
+  "version": "1.0.0",
+  "description": "Agente SAPUI5 Offline-First: validación de compatibilidad, autofix seguro y análisis de código UI5",
+  "private": true,
+  "ui5": {
+    "targetVersion": "1.108"
+  },
+  "scripts": {
+    "analyze": "node scripts/check-ui5-compat.js",
+    "autofix-safe": "node scripts/autofix-safe.js",
+    "autofix-safe:dry": "node scripts/autofix-safe.js --dry-run",
+    "verify": "npm run lint && node scripts/check-ui5-compat.js",
+    "online-verify": "echo '[AVISO] Este comando requiere autorización explícita para conectarse a internet.' && npm run verify",
+    "lint": "eslint webapp --ext .js,.ts --format stylish --no-error-on-unmatched-pattern",
+    "lint:fix": "eslint webapp --ext .js,.ts --fix --no-error-on-unmatched-pattern",
+    "format": "prettier --write 'webapp/**/*.{js,ts,xml,json}'",
+    "format:check": "prettier --check 'webapp/**/*.{js,ts,xml,json}'",
+    "test": "echo 'No hay tests configurados. Agrega tus tests aquí.' && exit 0"
+  },
+  "devDependencies": {
+    "eslint": "^8.57.0",
+    "prettier": "^3.2.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
