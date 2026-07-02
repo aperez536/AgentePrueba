@@ -160,6 +160,15 @@ const files = getAllFiles(SCAN_DIR, [".xml", ".js", ".ts"]);
 const manualIssues = [];
 const appliedFixes = [];
 
+/**
+ * Escapa todos los caracteres especiales de RegExp, incluyendo backslashes.
+ * @param {string} str
+ * @returns {string}
+ */
+function escapeRegExp(str) {
+  return str.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+}
+
 for (const filePath of files) {
   const relPath = path.relative(ROOT, filePath);
   let content;
@@ -192,7 +201,7 @@ for (const filePath of files) {
 
   // Verificar APIs prohibidas (no se autocorrigen)
   for (const forbiddenApi of catalogEntry.forbidden) {
-    const pattern = new RegExp(forbiddenApi.replace(/\./g, "\\."), "g");
+    const pattern = new RegExp(escapeRegExp(forbiddenApi), "g");
     if (pattern.test(modified)) {
       manualIssues.push({
         tipo: "PROHIBIDA",
@@ -210,7 +219,7 @@ for (const filePath of files) {
     );
     if (hasSafeAutofix) continue;
 
-    const pattern = new RegExp(dep.api.replace(/\./g, "\\."), "g");
+    const pattern = new RegExp(escapeRegExp(dep.api), "g");
     if (pattern.test(modified)) {
       manualIssues.push({
         tipo: "DEPRECADA",

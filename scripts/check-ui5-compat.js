@@ -140,25 +140,35 @@ if (files.length === 0) {
 
 // ─── Construcción de patrones de búsqueda ────────────────────────────────────
 /**
+ * Escapa todos los caracteres especiales de RegExp, incluyendo backslashes.
+ * @param {string} str
+ * @returns {string}
+ */
+function escapeRegExp(str) {
+  return str.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+}
+
+/**
  * A partir de un nombre de API como "sap.m.Button", genera patrones que
  * detectan su uso en XML (xmlns:m="sap.m" + <m:Button) y en JS/TS
  * (sap.m.Button o "sap/m/Button").
  */
 function buildPatterns(apiName) {
   const parts = apiName.split(".");
-  const lastPart = parts[parts.length - 1];
-  const namespace = parts.slice(0, -1).join(".");
-  const amdPath = parts.join("/");
+  const lastPart = escapeRegExp(parts[parts.length - 1]);
+  const namespace = escapeRegExp(parts.slice(0, -1).join("."));
+  const amdPath = escapeRegExp(parts.join("/"));
+  const apiEscaped = escapeRegExp(apiName);
 
   return [
     // Uso directo en JS: sap.m.Button
-    new RegExp(apiName.replace(/\./g, "\\."), "g"),
+    new RegExp(apiEscaped, "g"),
     // Módulo AMD: "sap/m/Button"
     new RegExp(`["']${amdPath}["']`, "g"),
     // XML: nombre del control sin namespace (puede generar falsos positivos leves)
     new RegExp(`<[A-Za-z]+:${lastPart}[\\s/>]`, "g"),
     // XML namespace: xmlns:x="sap.m"
-    new RegExp(`xmlns:[^=]+=["']${namespace.replace(/\./g, "\\.")}["']`, "g"),
+    new RegExp(`xmlns:[^=]+=["']${namespace}["']`, "g"),
   ];
 }
 
