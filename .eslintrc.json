@@ -1,0 +1,67 @@
+{
+  "env": {
+    "browser": true,
+    "es2020": true,
+    "amd": true
+  },
+  "globals": {
+    "sap": "readonly",
+    "jQuery": "readonly",
+    "window": "readonly",
+    "document": "readonly",
+    "XMLHttpRequest": "readonly"
+  },
+  "parserOptions": {
+    "ecmaVersion": 2020,
+    "sourceType": "module"
+  },
+  "rules": {
+    "no-console": "warn",
+    "no-unused-vars": ["warn", { "argsIgnorePattern": "^_" }],
+    "no-undef": "error",
+    "eqeqeq": ["error", "always"],
+    "semi": ["error", "always"],
+    "quotes": ["warn", "double", { "avoidEscape": true }],
+    "no-var": "warn",
+    "prefer-const": "warn",
+    "no-eval": "error",
+    "no-implied-eval": "error",
+
+    "no-alert": "warn",
+    "no-throw-literal": "error",
+    "handle-callback-err": "error",
+
+    "no-jquery-sap-log": "off",
+    "no-jquery-sap-require": "off",
+    "no-jquery-sap-declare": "off"
+  },
+  "overrides": [
+    {
+      "files": ["**/*.controller.js", "**/*.controller.ts"],
+      "rules": {
+        "no-unused-vars": "off"
+      }
+    },
+    {
+      "files": ["scripts/**/*.js"],
+      "env": {
+        "node": true,
+        "browser": false
+      },
+      "parserOptions": {
+        "ecmaVersion": 2020,
+        "sourceType": "commonjs"
+      },
+      "rules": {
+        "no-console": "off",
+        "quotes": "off"
+      }
+    }
+  ],
+  "ignorePatterns": [
+    "node_modules/",
+    "dist/",
+    "coverage/",
+    "autofix-report.md"
+  ]
+}

@@ -1,0 +1,124 @@
+<mvc:View
+  controllerName="com.ejemplo.sapui5.controller.Main"
+  xmlns:mvc="sap.ui.core.mvc"
+  xmlns="sap.m"
+  xmlns:f="sap.f"
+  xmlns:uxap="sap.uxap"
+  xmlns:core="sap.ui.core"
+  displayBlock="true">
+
+  <!--
+    Vista de ejemplo — compatible con UI5 1.108
+    Usa únicamente APIs listadas como "allowed" en ui5-compatibility.json para v1.108.
+
+    APIs utilizadas:
+      - sap.f.DynamicPage / sap.f.DynamicPageTitle / sap.f.DynamicPageHeader
+      - sap.m.Button, sap.m.Table, sap.m.Column, sap.m.ColumnListItem
+      - sap.m.OverflowToolbar, sap.m.SearchField, sap.m.Label, sap.m.Text
+      - sap.m.MessageToast (usado desde el controller)
+      - sap.base.Log (usado desde el controller)
+
+    Nota: Para subir archivos usa sap.m.upload.UploadSet (disponible en 1.108).
+  -->
+
+  <f:DynamicPage id="dynamicPage" preserveHeaderOnScroll="false" toggleHeaderOnTitleClick="true">
+
+    <f:title>
+      <f:DynamicPageTitle>
+        <f:heading>
+          <Title text="Gestión de Productos" level="H1" />
+        </f:heading>
+        <f:snappedHeading>
+          <Title text="Productos" level="H2" />
+        </f:snappedHeading>
+        <f:actions>
+          <Button
+            id="btnAgregar"
+            text="Agregar producto"
+            type="Emphasized"
+            press=".onAgregarProducto" />
+          <Button
+            id="btnRefrescar"
+            text="Refrescar"
+            type="Default"
+            icon="sap-icon://refresh"
+            press=".onRefrescar" />
+        </f:actions>
+      </f:DynamicPageTitle>
+    </f:title>
+
+    <f:header>
+      <f:DynamicPageHeader pinnable="true">
+        <VBox class="sapUiSmallMargin">
+          <Label text="Buscar productos:" labelFor="searchField" />
+          <SearchField
+            id="searchField"
+            width="30rem"
+            placeholder="Nombre o código..."
+            search=".onBuscar"
+            liveChange=".onBuscarLive" />
+        </VBox>
+      </f:DynamicPageHeader>
+    </f:header>
+
+    <f:content>
+      <Table
+        id="tablaProductos"
+        items="{/productos}"
+        noDataText="No se encontraron productos"
+        growing="true"
+        growingThreshold="20"
+        sticky="ColumnHeaders">
+
+        <headerToolbar>
+          <OverflowToolbar>
+            <Title text="Productos ({= ${/productos}.length})" level="H4" />
+            <core:ToolbarSpacer />
+            <Button
+              text="Exportar"
+              icon="sap-icon://excel-attachment"
+              press=".onExportar" />
+          </OverflowToolbar>
+        </headerToolbar>
+
+        <columns>
+          <Column>
+            <Text text="Código" />
+          </Column>
+          <Column>
+            <Text text="Nombre" />
+          </Column>
+          <Column hAlign="End">
+            <Text text="Precio" />
+          </Column>
+          <Column hAlign="Center">
+            <Text text="Estado" />
+          </Column>
+          <Column hAlign="End">
+            <Text text="Acciones" />
+          </Column>
+        </columns>
+
+        <items>
+          <ColumnListItem type="Navigation" press=".onVerDetalle">
+            <cells>
+              <Text text="{codigo}" />
+              <Text text="{nombre}" />
+              <Text text="{= '€ ' + ${precio}.toFixed(2)}" />
+              <ObjectStatus
+                text="{estado}"
+                state="{= ${estado} === 'Activo' ? 'Success' : 'Error'}" />
+              <Button
+                text="Editar"
+                type="Transparent"
+                press=".onEditarProducto" />
+            </cells>
+          </ColumnListItem>
+        </items>
+
+      </Table>
+    </f:content>
+
+  </f:DynamicPage>
+
+</mvc:View>

@@ -1,0 +1,48 @@
+name: Validación CI — Agente SAPUI5 Offline-First
+
+on:
+  push:
+    branches: ["**"]
+  pull_request:
+    branches: ["**"]
+
+jobs:
+  validate:
+    name: Lint + Compatibilidad UI5
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout del repositorio
+        uses: actions/checkout@v4
+
+      - name: Configurar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+
+      - name: Instalar dependencias
+        run: npm ci --ignore-scripts
+
+      - name: Ejecutar ESLint
+        run: npm run lint
+        continue-on-error: false
+
+      - name: Verificar formato (Prettier)
+        run: npm run format:check
+        continue-on-error: true
+
+      - name: Ejecutar tests (si existen)
+        run: npm test
+        continue-on-error: true
+
+      - name: Verificar compatibilidad UI5
+        run: npm run analyze
+
+      - name: Subir reporte de compatibilidad (si existe)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: autofix-report
+          path: autofix-report.md
+          if-no-files-found: ignore
